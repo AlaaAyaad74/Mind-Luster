@@ -2,6 +2,10 @@
 
 A Kanban-style task management application built with React, TypeScript, and React Query.
 
+## 🌐 Live Demo
+
+**Deployed Application:** [https://mind-luster-three.vercel.app/](https://mind-luster-three.vercel.app/)
+
 ## Features
 
 - 4-column Kanban board (Backlog, In Progress, Review, Done)
