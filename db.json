@@ -1,0 +1,58 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design homepage",
+      "description": "Include hero section",
+      "column": "backlog"
+    },
+    {
+      "title": "Implement user authentication22",
+      "description": "Add login and signup functionality",
+      "column": "done",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Code review for API endpoints",
+      "description": "Review all REST API endpoints",
+      "column": "done"
+    },
+    {
+      "id": "4",
+      "title": "Setup project structure",
+      "description": "Initialize React and Vite project",
+      "column": "review"
+    },
+    {
+      "id": "5",
+      "title": "Add drag and drop feature",
+      "description": "Implement task movement between columns",
+      "column": "review"
+    },
+    {
+      "id": "6",
+      "title": "Write unit tests",
+      "description": "Cover all components with tests",
+      "column": "in-progress"
+    },
+    {
+      "id": "3918",
+      "title": "Implement user authentication",
+      "description": "just a description",
+      "column": "done"
+    },
+    {
+      "title": "Implement user authentication",
+      "description": "just a description",
+      "column": "in-progress",
+      "id": "b8ca"
+    },
+    {
+      "id": "44ba",
+      "title": "Implement user authentication",
+      "description": "",
+      "column": "backlog"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+/* Custom styles - Bootstrap is imported in main.tsx */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+/* Container enhancements */
+.container-fluid {
+  max-width: 1400px;
+}
+
+/* Task column styling */
+.task-column {
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: none !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff;
+}
+
+.task-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.task-column .card-header {
+  font-weight: 700;
+  padding: 18px 20px;
+  border-radius: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.task-column .card-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+.task-column .card-body {
+  padding: 14px;
+  min-height: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  background-color: #fafafa;
+}
+
+.task-column .card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-column .card-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+
+.task-column .card-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.task-column .card-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.task-column .card-footer {
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px;
+}
+
+/* Task card styling */
+.task-card,
+.card.shadow-sm {
+  transition: box-shadow 0.2s ease;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  height: fit-content;
+  min-height: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-card:hover,
+.card.shadow-sm:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.task-card .card-body,
+.card.shadow-sm .card-body {
+  padding: 8px 10px;
+  min-height: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card .card-title,
+.card.shadow-sm .card-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #212529;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-card .card-text,
+.card.shadow-sm .card-text {
+  margin-bottom: 6px;
+  line-height: 1.3;
+  color: #6c757d;
+  font-size: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.6em;
+}
+
+/* Task card action buttons */
+.task-card-actions {
+  flex-shrink: 0;
+  opacity: 1;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-action {
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: background-color 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.btn-action svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.btn-action span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.btn-edit {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.btn-edit:hover {
+  background-color: #e9ecef;
+  color: #333333;
+}
+
+.btn-delete {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.btn-delete:hover {
+  background-color: #e9ecef;
+  color: #333333;
+}
+
+/* Drag and drop animations */
+.card[style*="transform"] {
+  transition: transform 200ms ease;
+}
+
+/* Smooth drag overlay */
+[data-rbd-drag-handle-context-id] {
+  cursor: grab !important;
+}
+
+[data-rbd-drag-handle-context-id]:active {
+  cursor: grabbing !important;
+}
+
+/* Column drop zone highlight */
+.card-body[style*="background-color"] {
+  transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+/* Search bar styling */
+.input-group {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+}
+
+.input-group .form-control {
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.input-group .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  padding: 10px 16px;
+}
+
+/* Button enhancements */
+.btn-primary {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+/* Pagination styling */
+.pagination {
+  margin: 0;
+}
+
+.pagination .page-link {
+  border-radius: 6px;
+  margin: 0 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #495057;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  transform: translateY(-1px);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  box-shadow: 0 2px 4px rgba(13, 110, 253, 0.3);
+}
+
+.pagination .page-item.disabled .page-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal/Task Form styling */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 2px solid #e9ecef;
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 2px solid #e9ecef;
+  padding: 20px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Alert styling */
+.alert {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page header */
+h1 {
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+/* Create New Task Button */
+.btn-create-task {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-create-task:hover {
+  background-color: #0b5ed7;
+  color: #ffffff;
+}
+
+.btn-create-task:active {
+  background-color: #0a58ca;
+}
+
+/* Task Form Modal Styling */
+.modal-overlay {
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.task-form-modal {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.task-form-header {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  color: #ffffff;
+  padding: 20px 24px;
+  border-bottom: none;
+  position: relative;
+}
+
+.task-form-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+.task-form-header .modal-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-form-header .btn-close {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.task-form-header .btn-close:hover {
+  opacity: 1;
+}
+
+.task-form-modal .modal-body {
+  padding: 28px;
+  background-color: #ffffff;
+}
+
+.task-form-input {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.task-form-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+  outline: none;
+}
+
+.task-form-input:hover:not(:disabled) {
+  border-color: #ced4da;
+}
+
+.task-form-input:disabled {
+  background-color: #f8f9fa;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.task-form-modal .form-label {
+  color: #495057;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.task-form-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.btn-save {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  background-color: #0d6efd;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-save:hover:not(:disabled) {
+  background-color: #0b5ed7;
+  color: #ffffff;
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+.modal-dialog {
+  max-width: 540px;
+  margin: 1.75rem auto;
+}
+
+/* Empty state */
+.text-muted.text-center.py-4 {
+  color: #6c757d;
+  font-style: italic;
+}
