@@ -45,14 +45,14 @@
     {
       "title": "Implement user authentication",
       "description": "just a description",
-      "column": "in-progress",
+      "column": "review",
       "id": "b8ca"
     },
     {
       "id": "44ba",
       "title": "Implement user authentication",
       "description": "",
-      "column": "review"
+      "column": "in-progress"
     }
   ]
 }

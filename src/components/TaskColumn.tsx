@@ -92,30 +92,21 @@ export const TaskColumn = ({
     startIndex + itemsPerPage
   );
 
-  const columnStyle = {
-    backgroundColor: isOver ? "#f8f8f8" : "#ffffff",
-    border: isOver ? "2px dashed #cccccc" : "none",
-    borderRadius: "8px",
-    minHeight: "400px",
-    transition: "background-color 0.2s ease",
-  };
-
   return (
     <div className="col-md-3">
-      <div className="card h-100 task-column">
-        <div className="card-header">
-          <h6 className="mb-0">
+      <div className="card h-100 shadow-sm">
+        <div className="card-header bg-light">
+          <h6 className="mb-0 fw-semibold">
             {title} ({filteredTasks.length})
           </h6>
         </div>
         <div
           ref={setDroppableRef}
-          className="card-body"
+          className={`card-body ${isOver ? "bg-light border border-2 border-dashed" : ""}`}
           style={{
-            ...columnStyle,
+            minHeight: "400px",
             maxHeight: "600px",
             overflowY: "auto",
-            padding: isOver ? "14px" : "16px",
           }}
         >
           <SortableContext
@@ -138,7 +129,7 @@ export const TaskColumn = ({
             )}
           </SortableContext>
         </div>
-        <div className="card-footer">
+        <div className="card-footer bg-white">
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

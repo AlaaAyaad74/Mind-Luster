@@ -14,45 +14,36 @@ export const TaskCard = ({ task, onEdit, onDelete }: TaskCardProps) => {
   };
 
   return (
-    <div className="card mb-2 shadow-sm task-card">
+    <div className="card mb-2 shadow-sm">
       <div className="card-body p-2 d-flex flex-column">
         <div className="flex-grow-1 mb-2">
-          <h6
-            className="card-title fw-semibold mb-1"
-            style={{ fontSize: "0.875rem", lineHeight: "1.2" }}
-          >
+          <h6 className="card-title fw-semibold mb-1 small">
             {task.title}
           </h6>
           {task.description && (
-            <p
-              className="card-text text-muted small mb-0"
-              style={{
-                fontSize: "0.75rem",
-                lineHeight: "1.3",
-              }}
-            >
+            <p className="card-text text-muted small mb-0">
               {task.description}
             </p>
           )}
         </div>
-        <div className="d-flex gap-2 task-card-actions justify-content-end">
+        <div className="d-flex gap-2 justify-content-end border-top pt-2 mt-auto">
           <button
-            className="btn btn-action btn-edit"
+            className="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1"
             onClick={handleEditClick}
             type="button"
             title="Edit task"
           >
-            <EditIcon width={16} height={16} className="me-1" />
-            <span>Edit</span>
+            <EditIcon width={16} height={16} />
+            <span className="small">Edit</span>
           </button>
           <button
-            className="btn btn-action btn-delete"
+            className="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
             onClick={handleDeleteClick}
             type="button"
             title="Delete task"
           >
-            <DeleteIcon width={16} height={16} className="me-1" />
-            <span>Delete</span>
+            <DeleteIcon width={16} height={16} />
+            <span className="small">Delete</span>
           </button>
         </div>
       </div>

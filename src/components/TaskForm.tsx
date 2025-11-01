@@ -35,19 +35,19 @@ export const TaskForm = ({
 
   return (
     <div
-      className="modal show d-block modal-overlay"
-      style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+      className="modal show d-block"
+      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div className="modal-content task-form-modal">
-          <div className="modal-header task-form-header">
+        <div className="modal-content shadow-lg">
+          <div className="modal-header bg-primary text-white">
             <div className="d-flex align-items-center gap-2">
               {task ? (
                 <EditIcon width={20} height={20} />
               ) : (
                 <PlusIcon width={20} height={20} />
               )}
-              <h5 className="modal-title mb-0">
+              <h5 className="modal-title mb-0 text-white">
                 {task ? "Edit Task" : "Create New Task"}
               </h5>
             </div>
@@ -60,13 +60,13 @@ export const TaskForm = ({
           </div>
           <form onSubmit={handleSubmit}>
             <div className="modal-body">
-              <div className="mb-4">
+              <div className="mb-3">
                 <label htmlFor="taskTitle" className="form-label fw-semibold">
                   Title <span className="text-danger">*</span>
                 </label>
                 <input
                   type="text"
-                  className="form-control form-control-lg task-form-input"
+                  className="form-control form-control-lg"
                   id="taskTitle"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -75,7 +75,7 @@ export const TaskForm = ({
                   placeholder="Enter task title"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label
                   htmlFor="taskDescription"
                   className="form-label fw-semibold"
@@ -83,7 +83,7 @@ export const TaskForm = ({
                   Description
                 </label>
                 <textarea
-                  className="form-control task-form-input"
+                  className="form-control"
                   id="taskDescription"
                   rows={4}
                   value={description}
@@ -97,7 +97,7 @@ export const TaskForm = ({
                   Column
                 </label>
                 <select
-                  className="form-select form-select-lg task-form-input"
+                  className="form-select form-select-lg"
                   id="taskColumn"
                   value={column}
                   onChange={(e) => setColumn(e.target.value as TaskColumn)}
@@ -110,10 +110,10 @@ export const TaskForm = ({
                 </select>
               </div>
             </div>
-            <div className="modal-footer task-form-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary btn-cancel"
+                className="btn btn-secondary"
                 onClick={onCancel}
                 disabled={isSubmitting}
               >
@@ -121,13 +121,13 @@ export const TaskForm = ({
               </button>
               <button
                 type="submit"
-                className="btn btn-primary btn-save"
+                className="btn btn-primary d-flex align-items-center gap-2"
                 disabled={isSubmitting || !title.trim()}
               >
                 {isSubmitting ? (
                   <>
                     <span
-                      className="spinner-border spinner-border-sm me-2"
+                      className="spinner-border spinner-border-sm"
                       role="status"
                       aria-hidden="true"
                     ></span>
@@ -135,12 +135,12 @@ export const TaskForm = ({
                   </>
                 ) : task ? (
                   <>
-                    <CheckIcon width={16} height={16} className="me-1" />
+                    <CheckIcon width={16} height={16} />
                     Update Task
                   </>
                 ) : (
                   <>
-                    <PlusIcon width={16} height={16} className="me-1" />
+                    <PlusIcon width={16} height={16} />
                     Create Task
                   </>
                 )}

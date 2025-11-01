@@ -98,15 +98,15 @@ function App() {
     <div className="container-fluid mt-4">
       <div className="mb-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h1>MindLuster</h1>
+          <h1 className="mb-0">MindLuster</h1>
           <button
-            className="btn btn-create-task"
+            className="btn btn-primary d-flex align-items-center gap-2"
             onClick={() => {
               setEditingTask(null);
               setShowForm(true);
             }}
           >
-            <PlusIcon width={16} height={16} className="me-1" />
+            <PlusIcon width={16} height={16} />
             <span>Add Task</span>
           </button>
         </div>
