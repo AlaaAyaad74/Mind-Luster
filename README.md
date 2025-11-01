@@ -22,7 +22,8 @@ A Kanban-style task management application built with React, TypeScript, and Rea
 - React Query
 - Bootstrap 5
 - @dnd-kit (drag-and-drop)
-- JSON Server (mock API)
+- JSON Server (local development)
+- MockAPI (production fallback)
 
 ## Getting Started
 
@@ -47,6 +48,17 @@ npm run dev
 ```
 
 The app will be available at `http://localhost:5173`
+
+**Note**: If JSON Server is not running locally, the app will automatically fallback to MockAPI.
+
+## Deployment
+
+The application automatically uses **MockAPI** (`https://69068a3cb1879c890ed787f3.mockapi.io/tasks/tasks`) when:
+
+- Deployed to production (Vercel)
+- Local JSON Server is not available
+
+No additional configuration needed! Just deploy to Vercel and it will work.
 
 ## Project Structure
 
