@@ -28,7 +28,7 @@
       "id": "5",
       "title": "Add drag and drop feature",
       "description": "Implement task movement between columns",
-      "column": "review"
+      "column": "done"
     },
     {
       "id": "6",
@@ -40,7 +40,7 @@
       "id": "3918",
       "title": "Implement user authentication",
       "description": "just a description",
-      "column": "done"
+      "column": "review"
     },
     {
       "title": "Implement user authentication",
@@ -52,7 +52,7 @@
       "id": "44ba",
       "title": "Implement user authentication",
       "description": "",
-      "column": "backlog"
+      "column": "review"
     }
   ]
 }
